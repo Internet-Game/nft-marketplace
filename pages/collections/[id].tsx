@@ -201,7 +201,7 @@ const Home: NextPage<Props> = ({ fallback, id }) => {
             <>
               <Sidebar attributes={attributes} setTokensSize={tokens.setSize} />
               <div className="col-span-full mx-6 mt-4 sm:col-end-[-1] md:col-start-4">
-                <div className="mb-4 hidden items-center justify-between md:flex">
+                <div className="mb-4 hidden items-center justify-between md:hidden">
                   <div className="flex items-center gap-6">
                     {tokenCount > 0 && (
                       <>
@@ -243,11 +243,12 @@ const Home: NextPage<Props> = ({ fallback, id }) => {
                     </button>
                   </div>
                 </div>
-                <div className="mb-10 flex items-center justify-between">
+                <div className="mb-5 flex items-center justify-between">
                   <div>
                     <AttributesFlex className="flex flex-wrap gap-3" />
                     <ExploreFlex />
                   </div>
+                  {/* 
                   {SOURCE_ID && (
                     <div className="flex items-center gap-4">
                       <input
@@ -265,6 +266,7 @@ const Home: NextPage<Props> = ({ fallback, id }) => {
                       </label>
                     </div>
                   )}
+                  */}
                 </div>
                 {router.query?.attribute_key ||
                 router.query?.attribute_key === '' ? (

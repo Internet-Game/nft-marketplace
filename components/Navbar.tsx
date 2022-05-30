@@ -66,7 +66,7 @@ const Navbar: FC = () => {
 
         const smallCommunity =
           initialResults?.collections &&
-          initialResults.collections.length >= 2 &&
+          initialResults.collections.length >= 0 &&
           initialResults.collections.length <= 10
 
         if (COMMUNITY && smallCommunity) {

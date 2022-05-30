@@ -92,7 +92,7 @@ const Hero: FC<Props> = ({ fallback, collectionId }) => {
     count: Number(collection.data?.collection?.tokenCount ?? 0),
     topOffer: collection.data?.collection?.topBid?.value,
     floor: floor?.price,
-    vol24: collection.data?.collection?.volume?.['1day'],
+    vol24: collection.data?.collection?.volume?.['allTime'],
     volumeChange: collection.data?.collection?.volumeChange?.['1day'],
     floorChange: collection.data?.collection?.floorSaleChange?.['1day'],
   }
@@ -170,16 +170,21 @@ const Hero: FC<Props> = ({ fallback, collectionId }) => {
     <>
       <HeroBackground banner={header.banner}>
         <div className="z-10 flex w-full flex-col items-center gap-6">
+          {/* 
           <img
             className="h-20 w-20 rounded-full"
             alt={`${header.name} Logo`}
             src={header.image}
           />
-          <h1 className="reservoir-h4 text-center text-black dark:text-white">
+          */}
+          <h1 className="reservoir-h4 md:reservoir-h3 text-center text-black dark:text-white">
             {header.name}
           </h1>
+          {/* 
           <HeroSocialLinks collection={collection?.data?.collection} />
+          */}
           <HeroStats stats={statsObj} />
+          {/* 
           {header.description && (
             <>
               <div
@@ -211,6 +216,7 @@ const Hero: FC<Props> = ({ fallback, collectionId }) => {
               )}
             </>
           )}
+          */}
           <div className="flex w-full flex-col justify-center gap-4 md:flex-row">
             {isSupported &&
               (isAttributeModal ? (
